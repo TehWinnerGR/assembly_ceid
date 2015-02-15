@@ -10,7 +10,6 @@ MOV R1, #6       			@number of elements
 
 BL Insertion
 
-
 LDMIA R13!, { R0- R12, R14 }
 @END OF MAIN
 
@@ -24,17 +23,12 @@ MOV R3, #0					@ position of the first element
 MOV R4, #0					@ position of the small element
 MOV R5, #1					@ position of the next item
 
-
-@ kai o R5
-
 	Loop1:
-	
 	ADD R5, R3, #1
 	LDR R2, [ R0, R3 ]
 	MOV R4, R3
 		
 		Loop2:		
-
 		LDR R6, [ R0, R5]
 		
 		CMP R2, R6
@@ -55,14 +49,13 @@ MOV R5, #1					@ position of the next item
 	CMP R3, R1 
 	BLO Loop1
 
-
 LDMIA R13!, { R0 - R12 }
 MOV PC, LR
 
 @END OF SUBROUTINE
 
-@subroutine 2
 
+@subroutine 2
 TestRoutine: 
 
 STMDB R13!, {R0-R11}
